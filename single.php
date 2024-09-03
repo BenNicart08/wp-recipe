@@ -24,14 +24,20 @@
           </ul>
         </div>
 
-        <div class="grid grid-cols-[2fr_1fr] gap-10 translate-y-[260px]">
+        <div class="single__wrapper grid grid-cols-[2fr_1fr] gap-10 translate-y-[260px]">
           <?php if(has_post_thumbnail()){
                         the_post_thumbnail();
                     }?>
-          <div class="bg-accent text-white px-10 py-14">
+          <div class="single__ingredients bg-accent text-white px-10 py-14">
             <h3>Ingredients</h3>
             <ul>
-              <?php echo get_post_meta(get_the_ID(), "Ingredients", true)?>
+              <?php
+              $blocks = parse_blocks($post->post_content);
+                foreach ($blocks as $block) {
+                  if ($block['blockName'] == 'core/list') {
+                    echo render_block($block);
+                  }
+                }?>
             </ul>
           </div>
         </div>
@@ -44,7 +50,12 @@
 
         <div class="grid grid-cols-[2fr_1fr] gap-10">
           <main>
-            <?php the_content()?>
+            <?php $blocks = parse_blocks($post->post_content);
+                foreach ($blocks as $block) {
+                  if ($block['blockName'] == 'core/paragraph') {
+                    echo render_block($block);
+                  }
+                }?>
           </main>
 
 

@@ -13,8 +13,7 @@ function recipe_theme_support() {
     add_theme_support( 'title-tag' );
 
     register_nav_menu('header_menu', 'Header Menu');
-    register_nav_menu('footer_1_menu', 'Footer 1 Menu');
-    register_nav_menu('footer_2_menu', 'Footer 2 Menu');
+    register_nav_menu('footer_menu', 'Footer Menu');
 
 }
 

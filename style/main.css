@@ -1063,3 +1063,24 @@ textarea {
   height: 120px;
   object-fit: cover;
 }
+
+.page__banner img {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  object-fit: cover;
+  top: 5rem;
+}
+.footer__nav--wrap {
+  display: flex;
+  gap: 0.5rem;
+}
+/* .single__ingredients {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+.single__wrapper img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
